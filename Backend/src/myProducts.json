@@ -1,0 +1,33 @@
+
+     [
+       {
+         "image": "https://www.ikea.com/se/sv/images/products/cylinder-vas-set-om-3-klarglas__0638963_pe699297_s5.jpg",
+         "productname": "Cylinder",
+         "price": 149,
+         "stock": 2
+       },
+       {
+         "image": "https://www.ikea.com/se/sv/images/products/stockholm-spegel-ekfaner__1357365_pe953540_s5.jpg",
+         "productname": "Stockholm",
+         "price": 995,
+         "stock": 5
+       },
+       {
+         "image": "https://www.ikea.com/se/sv/images/products/sannahed-ram-vit__0835452_pe778441_s5.jpg",
+         "productname": "Sannahed",
+         "price": 99,
+         "stock": 3
+       },
+       {
+         "image": "https://www.ikea.com/se/sv/images/products/bild-modern-larsson__0751842_pe747243_s5.jpg",
+         "productname": "Bild 3-pack",
+         "price": 179,
+         "stock": 4
+       },
+       {
+         "image": "https://www.ikea.com/se/sv/images/products/blanda-matt-serveringsskal-bambu__1395109_pe966841_s5.jpg",
+         "productname": "Blanda Matt",
+         "price": 49,
+         "stock": 2
+       }
+     ]

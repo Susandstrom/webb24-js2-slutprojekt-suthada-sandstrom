@@ -1,0 +1,63 @@
+body{
+    background-color: #c4c8ac;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+/*buttons*/
+button{
+    padding: 10px;
+    background-color: #fff;
+    border: solid;
+    margin: 10px;
+    border-radius:5px;
+}
+
+
+
+
+/*navbar*/
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    background-color: #477023;
+    border: solid;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.navbar-links li{
+    cursor: pointer;
+    transition: color 0,3s;
+}
+
+.navbar-my_webshop{
+    margin: 5px;
+    padding: 5px;
+}
+
+/*products*/
+.product-card{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.product-image{
+    max-width: 500px;
+}
+
+.product-container_img{
+    width:500px;
+}
