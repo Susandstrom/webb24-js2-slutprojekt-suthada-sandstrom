@@ -1,9 +1,9 @@
 import { Navbar } from "./Navbar.jsx";
 import { Error } from "./Error.jsx";
-import { ShoppingCart } from "./shoppingcart.jsx";
+import { ShoppingCart } from "./ShoppingCart.jsx";
 import { PaymentsConfirmation } from "./PaymentsConfirmation.jsx";
 import { fetchMyProducts } from "../utils/fetchMyProducts.js";
-import { ProductContainer } from "./productContainer.jsx";
+import { ProductContainer } from "./ProductContainer.jsx";
 import { useEffect, useState } from "react";
 
 export function App(){
@@ -14,8 +14,8 @@ export function App(){
         const [cartProducts, setCartProducts] = useState([]); // detaljer
 
 
-        const handleAddToCart = (productItems) => {
-            setCartProducts((prevCart) => [...prevCart, productItems]);
+        const onHandleAddToCart = (productItems) => {
+            setCartProducts([...cartProducts, productItems]);
         };
        
         useEffect(() =>{
@@ -34,8 +34,8 @@ export function App(){
                     <Navbar setCurrentPage={setCurrentPage} cartProducts={cartProducts}/>
                 </header>
                 <main>
-                    {currentPage == 'browsing' && (<ProductContainer products={products} setCart={setCart} cart={cart} onHandleAddToCart={handleAddToCart}/>)}
-                    {currentPage == 'buying' && (<ShoppingCart setCurrentPage={setCurrentPage} cart={cart} setCart={setCart} products={products} setProducts={setProducts}/>)}
+                    {currentPage == 'browsing' && (<ProductContainer products={products} setCart={setCart} cart={cart} onHandleAddToCart={onHandleAddToCart}/>)}
+                    {currentPage == 'buying' && (<ShoppingCart setCurrentPage={setCurrentPage} cart={cart} setCart={setCart}  products={products} setProducts={setProducts} setCartProducts={setCartProducts}/>)}
                     {currentPage == 'error' && <Error/>}
                     {currentPage == 'success' && <PaymentsConfirmation setCurrentPage={setCurrentPage}/>}
                 </main>

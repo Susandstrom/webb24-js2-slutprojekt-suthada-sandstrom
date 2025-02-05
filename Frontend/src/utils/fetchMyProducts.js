@@ -10,7 +10,7 @@ export async function fetchMyProducts( ) {
 
 export async function updateProducts(products) {
 
-    const url = 'http:localhost:3000/api/products/updates';
+    const url = 'http://localhost:3000/api/products/updates';
 
     const res = await fetch(url,{
         method: "POST",
@@ -19,4 +19,5 @@ export async function updateProducts(products) {
             "Content-type": "application/json; charset=UTF-8"
         }
     });
+    res.json();
 }

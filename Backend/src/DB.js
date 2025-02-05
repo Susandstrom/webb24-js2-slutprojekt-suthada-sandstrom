@@ -9,8 +9,6 @@ async function getProducts() {
 async function updateProducts(products) {
     const rawDB = await fs.readFile('./src/myProducts.json');
     let dbProducts = JSON.parse(rawDB);
-    
-    //console.log(dbProducts);
 
     for(const productString of products) {
         console.log(productString, 'yttre');

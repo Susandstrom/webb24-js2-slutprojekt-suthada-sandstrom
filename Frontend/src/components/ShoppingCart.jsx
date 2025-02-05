@@ -1,24 +1,25 @@
 import { updateProducts } from "../utils/fetchMyProducts.js";
 
 export function ShoppingCart({setCurrentPage, cart =[], setCart, products, setProducts, setCartProducts}) {
-    if(!Array.isArray(cart)){
-        console.error("Expected cart to be an array", typeof cart);
-        return <div>Error</div>;
-    }
-    
-    const totalPrice = cart.reduce((total, product) =>{
-        return total + product.price * product.quantity;
-    },0);
+    let totalPrice = 0;
+    for(const cartProduct of cart){
+        totalPrice = cartProduct.price;
 
+    };
+        
     //buy-cart
    function handleBuying(){
-    console.log("cart:",cart);
-    const productnames = cart.map(item => item.productname);
+    console.log("cart", cart);
+    const products = cart.map(item => item.productname);
 
     updateProducts(products);
     clearCart();
     setCurrentPage('success');
-   }
+
+    setTimeout(() => {
+        window.location.reload();
+    }, 3000);
+   };
 
     //clear
     function clearCart() {
@@ -26,13 +27,15 @@ export function ShoppingCart({setCurrentPage, cart =[], setCart, products, setPr
             const cartProduct = cart.find((item) => item.productname === product.productname);
 
             if(cartProduct) {
-                return {...product, stock: product.stock - cartProduct.quantity};
+                return {...product, stock: product.stock};
             }
             return product;
         });
 
         setProducts(updateProducts);
         setCart([]);
+        setCartProducts([]);
+        setCurrentPage('browsing');
 
     }
     return(
@@ -46,7 +49,7 @@ export function ShoppingCart({setCurrentPage, cart =[], setCart, products, setPr
             ))
         )}
         <p>Total Price: {totalPrice} SEK</p>
-        <button onClick={handleBuying}>Complete your purchase</button>
+        <button onClick={()=> handleBuying('success')}>Complete your purchase</button>
         <button onClick={clearCart}>Clear My Cart</button>
     </div>
     );

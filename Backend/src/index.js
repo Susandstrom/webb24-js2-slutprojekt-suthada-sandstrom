@@ -15,10 +15,10 @@ app.get('/api/products', async (req, res) =>{
 })
 
 app.post('/api/products/updates', async(req, res) => {
-    let Products = await db.getProducts();
+    let items = await db.getProducts();
     console.log(req.body);
 
-    products = await db.updateProducts(req.body);
+    items = await db.updateProducts(req.body);
     res.json([db.updateProducts]);
 })
 
